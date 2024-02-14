@@ -3,6 +3,8 @@ deploy:
   phases:
     build:
       commands:
+        - echo "entered in deployspec file of latest branch"  # Add echo command here
+        - sudo apt-get update && sudo apt-get install -y dos2unix
         - git config --global credential.helper '!aws codecommit credential-helper $@'
         - git config --global credential.UseHttpPath true
         - chmod +x ./scripts/create_s3_bucket.sh
