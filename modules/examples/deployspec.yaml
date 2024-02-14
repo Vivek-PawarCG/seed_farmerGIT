@@ -3,6 +3,7 @@ deploy:
   phases:
     build:
       commands:
+        - echo "entered in deployspec file of latest branch"  # Add echo command here
         - git config --global credential.helper '!aws codecommit credential-helper $@'
         - git config --global credential.UseHttpPath true
         # - git config --global user.name "user-1-at-471112572090" 
