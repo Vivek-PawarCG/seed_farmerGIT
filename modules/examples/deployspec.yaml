@@ -3,22 +3,21 @@ deploy:
   phases:
     build:
       commands:
-        - echo "entered in deployspec file of latest branch"  # Add echo command here
         - git config --global credential.helper '!aws codecommit credential-helper $@'
         - git config --global credential.UseHttpPath true
-        # - git config --global user.name "user-1-at-471112572090" 
-        # - git config --global user.password "dNzbvcwLRm9lPsvVtfzbltzBsp/43GJdLDf8DmzpTVY="
         - chmod +x ./scripts/create_s3_bucket.sh
+        - dos2unix ./scripts/create_s3_bucket.sh  # Convert line endings
         - ./scripts/create_s3_bucket.sh  # Execute the bucket creation script
   artifacts:
     paths:
       - output.txt  # Optional: Provide an output file to indicate success
-
+ 
 destroy:
   phases:
     pre_build:
       commands:
         - chmod +x ./scripts/destroy_s3_bucket.sh
+        - dos2unix ./scripts/destroy_s3_bucket.sh  # Convert line endings
     build:
       commands:
         - ./scripts/destroy_s3_bucket.sh
