@@ -9,7 +9,7 @@ bucket_name="my-seedfarmer-s3-bucket"
 bucket_versioning="Enabled" 
  
 # Create the S3 bucket
-aws s3 mb s3://$bucket_name
+aws s3 mb s3://$bucket_name  #bucket name here
  
 # Enable versioning (if applicable)
 if [[ "$bucket_versioning" == "Enabled" ]]; then
