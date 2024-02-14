@@ -1,0 +1,3 @@
+parameters:
+  - name: BucketName
+    value: my-example-bucket-12022024
