@@ -5,7 +5,6 @@ aws configure set aws_access_key_id AKIAW3MD7LS5KMTOI77R
 aws configure set aws_secret_access_key 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
 aws configure set region us-east-1
  
-# S3 bucket parameters
 bucket_name="my-seedfarmer-s3-bucket"
 bucket_versioning="Enabled"  # Optional: Set to "Enabled" for versioning
  
