@@ -8,7 +8,7 @@ deploy:
         - git config --global credential.UseHttpPath true
         - chmod +x ./scripts/create_s3_bucket.sh
         - dos2unix ./scripts/create_s3_bucket.sh  # Convert line endings
-        - ./scripts/create_s3_bucket.sh  # Execute the bucket creation script
+        - ./scripts/create_s3_bucket.sh  # Execute the bucket creation 
   artifacts:
     paths:
       - output.txt  # Optional: Provide an output file to indicate success
